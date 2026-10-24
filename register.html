@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for an Event | CampusConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header class="site-header">
+
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a class="brand" href="index.html">
+                CampusConnect
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Events</a>
+                <a href="register.html" aria-current="page">Register</a>
+                <a href="dashboard.html">Organizer Dashboard</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="reg-wrap">
+
+            <section class="reg-card" id="formSection" aria-labelledby="reg-title">
+
+                <h1 id="reg-title">Register for an event</h1>
+                <p class="reg-intro">Fill in your details to reserve a seat.</p>
+
+                <form id="registerForm" novalidate>
+
+                    <div class="field">
+                        <label for="eventSelect">Event</label>
+                        <select id="eventSelect" name="event">
+                            <option value="">Select an event</option>
+                        </select>
+                        <p class="seat-info" id="seatInfo"></p>
+                        <p class="error" id="eventError"></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="name">Full name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Simran Kaur" autocomplete="name">
+                        <p class="error" id="nameError"></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="rollNo">Roll number</label>
+                        <input type="text" id="rollNo" name="rollNo" placeholder="e.g. 12345678">
+                        <p class="error" id="rollError"></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+                        <p class="error" id="emailError"></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" maxlength="10" autocomplete="tel">
+                        <p class="error" id="phoneError"></p>
+                    </div>
+
+                    <button type="submit" class="primary-button submit-button">Register now</button>
+
+                </form>
+
+            </section>
+
+            <!-- Hidden until registration succeeds -->
+            <section class="slip hidden" id="confirmation" aria-live="polite" aria-labelledby="slip-title">
+
+                <h2 id="slip-title">Registration confirmed</h2>
+                <p class="slip-sub">Keep this slip for entry on the day.</p>
+
+                <dl>
+                    <dt>Event</dt><dd id="slipEvent"></dd>
+                    <dt>Date</dt><dd id="slipDate"></dd>
+                    <dt>Venue</dt><dd id="slipVenue"></dd>
+                    <dt>Name</dt><dd id="slipName"></dd>
+                    <dt>Roll number</dt><dd id="slipRoll"></dd>
+                    <dt>Email</dt><dd id="slipEmail"></dd>
+                    <dt>Phone</dt><dd id="slipPhone"></dd>
+                </dl>
+
+                <div class="slip-actions">
+                    <button type="button" id="registerAnother" class="secondary-button">Register for another event</button>
+                    <a class="text-link" href="index.html">Back to events</a>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            Campus events made easier.
+        </p>
+    </footer>
+
+    <script src="register.js"></script>
+</body>
+</html>
