@@ -7,18 +7,96 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="main-header">
-        <h1>Campus Event Management & Registration Portal</h1>
-        <p>Explore and register for upcoming college fests, workshops, and seminars.</p>
+    <header class="site-header">
+
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a class="brand" href="index.html">
+                CampusConnect
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html" aria-current="page">Events</a>
+                <a href="register.html">Register</a>
+                <a href="dashboard.html">Organizer Dashboard</a>
+            </div>
+
+        </nav>
+
     </header>
 
-    <main class="container">
-        <section class="welcome-box">
-            <h2>Welcome to the Portal</h2>
-            <p>System status: <span id="status-text">Loading upcoming events...</span></p>
-            <button id="explore-btn" class="btn">View Events</button>
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+
+            <p class="eyebrow">Campus life, all in one place</p>
+
+            <h1 id="hero-title">
+                Find your next campus experience.
+            </h1>
+
+            <p class="hero-description">
+                Explore upcoming fests, workshops, seminars, and competitions.
+                Find an event that interests you and save your place.
+            </p>
+
+            <a class="primary-button" href="#upcoming-events">
+                Explore events
+            </a>
+
         </section>
+
+
+        <section class="events-section"
+            id="upcoming-events"
+            aria-labelledby="events-title">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">What's happening</p>
+                    <h2 id="events-title">Upcoming events</h2>
+                </div>
+
+                <div class="filter-control">
+
+                    <label for="categoryFilter">
+                        Filter by category
+                    </label>
+
+                    <select id="categoryFilter" name="category">
+
+                        <option value="all">All events</option>
+                        <option value="Fest">Fests</option>
+                        <option value="Workshop">Workshops</option>
+                        <option value="Seminar">Seminars</option>
+                        <option value="Competition">Competitions</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="event-grid" id="eventList" aria-live="polite">
+
+                <p class="empty-state">
+                    Campus events will appear here soon.
+                </p>
+
+            </div>
+
+        </section>
+
     </main>
-    <script src="script.js"></script>
+
+    <footer class="site-footer">
+
+        <p>
+            &copy; 2026 CampusConnect · Campus events made easier.
+        </p>
+
+    </footer>
+
 </body>
+
 </html>
