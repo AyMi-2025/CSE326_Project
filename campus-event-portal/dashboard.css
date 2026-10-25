@@ -1,0 +1,193 @@
+/* =========================================
+   dashboard.css  (Teammate 3)
+   Organizer Dashboard: layout, form, tables, badges
+   All rules are scoped under .dashboard so they
+   don't clash with style.css (Teammate 1).
+   ========================================= */
+
+.dashboard {
+  --dash-primary: #1f4e79;
+  --dash-primary-dark: #163a5a;
+  --dash-success: #1e8449;
+  --dash-danger: #c0392b;
+  --dash-border: #d5dbe3;
+  --dash-stripe: #f4f6f9;
+  --dash-hover: #e8f0f8;
+  --dash-text: #2c3e50;
+  --dash-muted: #6b7785;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+  color: var(--dash-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Page heading ---------- */
+.dashboard h1 {
+  margin: 0 0 4px;
+  font-size: 1.8rem;
+}
+
+.dashboard .subtitle {
+  margin: 0 0 24px;
+  color: var(--dash-muted);
+}
+
+.dashboard h2 {
+  margin: 0 0 16px;
+  font-size: 1.3rem;
+  color: var(--dash-primary);
+}
+
+/* ---------- Section cards ---------- */
+.dashboard .card {
+  background: #fff;
+  border: 1px solid var(--dash-border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- Add Event form ---------- */
+.dashboard .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.dashboard .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard .form-group label {
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.dashboard .form-group input,
+.dashboard .form-group select {
+  padding: 10px;
+  border: 1px solid var(--dash-border);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.dashboard .form-group input:focus,
+.dashboard .form-group select:focus {
+  outline: 2px solid var(--dash-primary);
+  outline-offset: 1px;
+}
+
+.dashboard .form-message {
+  min-height: 1.2em;
+  margin: 16px 0 8px;
+  font-weight: bold;
+}
+
+.dashboard .form-message.error   { color: var(--dash-danger); }
+.dashboard .form-message.success { color: var(--dash-success); }
+
+/* ---------- Buttons ---------- */
+.dashboard .btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.dashboard .btn-primary {
+  background: var(--dash-primary);
+  color: #fff;
+}
+
+.dashboard .btn-primary:hover {
+  background: var(--dash-primary-dark);
+}
+
+.dashboard .btn-danger {
+  padding: 6px 12px;
+  background: var(--dash-danger);
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.dashboard .btn-danger:hover {
+  opacity: 0.85;
+}
+
+/* ---------- Tables ---------- */
+.dashboard .table-wrapper {
+  overflow-x: auto; /* wide tables scroll sideways on phones */
+}
+
+.dashboard .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.dashboard .data-table th,
+.dashboard .data-table td {
+  padding: 10px 12px;
+  border: 1px solid var(--dash-border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.dashboard .data-table thead th {
+  background: var(--dash-primary);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.dashboard .data-table tbody tr:nth-child(even) {
+  background: var(--dash-stripe);
+}
+
+.dashboard .data-table tbody tr:hover {
+  background: var(--dash-hover);
+}
+
+.dashboard .data-table td:last-child {
+  white-space: nowrap;
+}
+
+.dashboard .empty-msg {
+  text-align: center;
+  color: var(--dash-muted);
+}
+
+/* ---------- Status badges ---------- */
+.dashboard .badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.dashboard .badge-available { background: var(--dash-success); }
+.dashboard .badge-full      { background: var(--dash-danger); }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .dashboard h1 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard .card {
+    padding: 14px;
+  }
+
+  .dashboard .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
