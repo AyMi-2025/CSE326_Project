@@ -1,112 +1,203 @@
-/* register.css - registration page */
+/* register.css - registration page (light theme, same look as index page) */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f4ee;
+    color: #3a3f3b;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 50px;
+    background: #ffffff;
+    border-bottom: 1px solid #e3e3dc;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #2b4a3a;
+}
+
+.nav-links a {
+    margin-left: 28px;
+    font-size: 1.05rem;
+    padding-bottom: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    border-bottom: 2px solid #2b4a3a;
+}
+
+/* main part */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 45px 20px;
+}
+
+.hero-box {
+    background: #e5ece3;
+    padding: 36px;
+    border-radius: 14px;
+}
+
+.hero-box h1 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+    color: #2b4a3a;
+}
+
+.sub-text {
+    margin: 0 0 25px;
+    color: #4d554f;
+}
 
 .hidden {
     display: none;
 }
 
-.reg-wrap {
-    max-width: 520px;
-    margin: 30px auto 50px;
-    padding: 20px 24px;
-    background: #ffffff;
-    border: 1px solid #cccccc;
-}
-
-.reg-wrap h1 {
-    margin: 0 0 8px;
-    font-size: 1.6rem;
-    color: #243b32;
-}
-
-.reg-wrap h2 {
-    margin: 0 0 8px;
-    font-size: 1.4rem;
-    color: #243b32;
-}
-
+/* form */
 .field {
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 }
 
 .field label {
     display: block;
-    margin-bottom: 4px;
-    font-weight: bold;
+    margin-bottom: 6px;
 }
 
 .field input,
 .field select {
     width: 100%;
-    padding: 7px;
-    border: 1px solid #999999;
+    padding: 11px;
     background: #ffffff;
+    color: #333333;
+    border: 1px solid #c9cfc7;
+    border-radius: 6px;
+    font-size: 1rem;
 }
 
 .field input:focus,
 .field select:focus {
-    outline: 2px solid #294738;
+    outline: none;
+    border-color: #2b4a3a;
 }
 
 .field.invalid input,
 .field.invalid select {
-    border-color: red;
+    border-color: #c0392b;
 }
 
 .error {
     display: block;
-    color: red;
-    font-size: 0.85rem;
+    margin-top: 5px;
+    color: #c0392b;
+    font-size: 0.88rem;
 }
 
 #seatInfo {
     display: block;
-    margin-top: 3px;
-    color: #444444;
+    margin-top: 5px;
+    color: #5d665f;
 }
 
 #seatInfo.full {
-    color: red;
+    color: #c0392b;
 }
 
-.submit-button {
-    padding: 9px 18px;
-    border: 1px solid #294738;
-    background: #294738;
+/* button */
+.btn {
+    padding: 12px 22px;
+    background: #2b4a3a;
     color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
-.submit-button:hover {
-    background: #1f392c;
+.btn:hover {
+    background: #1f3a2c;
 }
 
-/* confirmation slip */
-.slip table {
+/* confirmation table */
+table {
     width: 100%;
-    margin: 14px 0 18px;
+    margin-bottom: 22px;
     border-collapse: collapse;
 }
 
-.slip th,
-.slip td {
-    padding: 7px 9px;
-    border: 1px solid #bbbbbb;
+th,
+td {
+    padding: 10px;
     text-align: left;
+    border-bottom: 1px solid #c8d3c6;
 }
 
-.slip th {
+th {
     width: 35%;
-    background: #eeeeee;
+    color: #4d554f;
+    font-weight: normal;
 }
 
-.slip a {
-    color: #294738;
+.back-link {
+    display: inline-block;
+    margin-left: 18px;
+    color: #2b4a3a;
     text-decoration: underline;
 }
 
+/* footer */
+.footer {
+    padding: 35px 20px;
+    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid #e3e3dc;
+    color: #555555;
+}
+
+.footer p {
+    margin: 0;
+}
+
 @media (max-width: 600px) {
-    .reg-wrap {
-        margin: 15px auto 30px;
-        padding: 15px;
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 16px 20px;
+    }
+
+    .nav-links a {
+        margin: 0 18px 0 0;
+    }
+
+    .hero-box {
+        padding: 24px 20px;
+    }
+
+    .back-link {
+        display: block;
+        margin: 15px 0 0;
     }
 }

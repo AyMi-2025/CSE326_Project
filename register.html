@@ -3,94 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - CampusConnect</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Register - Campus Connect</title>
     <link rel="stylesheet" href="register.css">
 </head>
 <body>
-    <header class="site-header">
-        <nav class="navbar" aria-label="Main navigation">
-            <a class="brand" href="index.html">CampusConnect</a>
+    <header class="navbar">
+        <a class="logo" href="index.html">Campus Connect</a>
 
-            <div class="nav-links">
-                <a href="index.html">Events</a>
-                <a href="register.html" aria-current="page">Register</a>
-                <a href="dashboard.html">Organizer Dashboard</a>
-            </div>
+        <nav class="nav-links">
+            <a href="index.html">Event</a>
+            <a href="register.html" class="active">Register</a>
+            <a href="dashboard.html">Dashboard</a>
         </nav>
     </header>
 
     <main>
-        <div class="reg-wrap">
+        <section class="hero-box" id="formSection">
+            <h1>Register for an Event</h1>
+            <p class="sub-text">Select an event and fill in your details. All fields are required.</p>
 
-            <div id="formSection">
-                <h1>Event Registration</h1>
-                <p>Choose an event and fill the form below. All fields are required.</p>
+            <form id="registerForm" novalidate>
 
-                <form id="registerForm" novalidate>
+                <div class="field">
+                    <label for="eventSelect">Select Event</label>
+                    <select id="eventSelect">
+                        <option value="">Choose an event</option>
+                    </select>
+                    <small id="seatInfo"></small>
+                    <span class="error" id="eventError"></span>
+                </div>
 
-                    <div class="field">
-                        <label for="eventSelect">Select Event</label>
-                        <select id="eventSelect">
-                            <option value="">-- choose event --</option>
-                        </select>
-                        <small id="seatInfo"></small>
-                        <span class="error" id="eventError"></span>
-                    </div>
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name">
+                    <span class="error" id="nameError"></span>
+                </div>
 
-                    <div class="field">
-                        <label for="name">Name</label>
-                        <input type="text" id="name">
-                        <span class="error" id="nameError"></span>
-                    </div>
+                <div class="field">
+                    <label for="rollNo">Roll Number</label>
+                    <input type="text" id="rollNo">
+                    <span class="error" id="rollError"></span>
+                </div>
 
-                    <div class="field">
-                        <label for="rollNo">Roll Number</label>
-                        <input type="text" id="rollNo">
-                        <span class="error" id="rollError"></span>
-                    </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                    <span class="error" id="emailError"></span>
+                </div>
 
-                    <div class="field">
-                        <label for="email">Email</label>
-                        <input type="email" id="email">
-                        <span class="error" id="emailError"></span>
-                    </div>
+                <div class="field">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" maxlength="10">
+                    <span class="error" id="phoneError"></span>
+                </div>
 
-                    <div class="field">
-                        <label for="phone">Phone Number</label>
-                        <input type="text" id="phone" maxlength="10">
-                        <span class="error" id="phoneError"></span>
-                    </div>
+                <button type="submit" class="btn">Register</button>
 
-                    <button type="submit" class="submit-button">Register</button>
+            </form>
+        </section>
 
-                </form>
-            </div>
+        <!-- shown after successful registration -->
+        <section class="hero-box hidden" id="confirmation">
+            <h1>Registration Confirmed</h1>
+            <p class="sub-text">Your seat has been booked. Details are given below.</p>
 
-            <!-- shown after successful registration -->
-            <div class="slip hidden" id="confirmation">
-                <h2>Registration Confirmed</h2>
-                <p>Your seat has been booked. Details are given below.</p>
+            <table>
+                <tr><th>Event</th><td id="slipEvent"></td></tr>
+                <tr><th>Date</th><td id="slipDate"></td></tr>
+                <tr><th>Venue</th><td id="slipVenue"></td></tr>
+                <tr><th>Name</th><td id="slipName"></td></tr>
+                <tr><th>Roll No</th><td id="slipRoll"></td></tr>
+                <tr><th>Email</th><td id="slipEmail"></td></tr>
+                <tr><th>Phone</th><td id="slipPhone"></td></tr>
+            </table>
 
-                <table>
-                    <tr><th>Event</th><td id="slipEvent"></td></tr>
-                    <tr><th>Date</th><td id="slipDate"></td></tr>
-                    <tr><th>Venue</th><td id="slipVenue"></td></tr>
-                    <tr><th>Name</th><td id="slipName"></td></tr>
-                    <tr><th>Roll No</th><td id="slipRoll"></td></tr>
-                    <tr><th>Email</th><td id="slipEmail"></td></tr>
-                    <tr><th>Phone</th><td id="slipPhone"></td></tr>
-                </table>
-
-                <button type="button" id="registerAnother" class="submit-button">Register for another event</button>
-                <p><a href="index.html">Back to events</a></p>
-            </div>
-
-        </div>
+            <button type="button" id="registerAnother" class="btn">Register for another event</button>
+            <a class="back-link" href="index.html">Back to events</a>
+        </section>
     </main>
 
-    <footer class="site-footer">
-        <p>Campus events made easier.</p>
+    <footer class="footer">
+        <p>Campus Event Management Portal | 2026</p>
     </footer>
 
     <script src="register.js"></script>
